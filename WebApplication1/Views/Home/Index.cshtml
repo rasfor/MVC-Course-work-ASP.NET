@@ -1,0 +1,240 @@
+﻿@model IEnumerable<WebApplication1.Models.Order>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+@Styles.Render("~/Content/css/table.css")
+
+    <header>
+        <div class="jumbotron">
+            <div class="titles">
+                <div class="titles__first">
+                    <h2 align="center">сервис для волонтеров и нуждающихся</h2>
+                    <h1 align="center">помоги своему ближнему</h1>
+                </div>
+              
+                 <a href="#services" class="button">    Узнать больше</a> 
+            </div>
+        </div>
+        </header> 
+  
+    <div class="container body-content">
+        <form asp-controller="Home" asp-action="Index">
+            <p>
+                 <input type="text" class="css-input" name="SearchString">
+                <input type="submit" class="bnt-input" value="Поиск" />
+            </p>
+        </form>
+        <div>
+            <h3>Перечень обращений:</h3>
+            <table class="table">
+                <tr class="header">
+                    <td><p>Имя</p></td>
+                    <td><p>Причина</p></td>
+                    <td><p>Телефон</p></td>
+                    <td><p>Описание</p></td>
+                    <td></td>
+                </tr>
+                @foreach (WebApplication1.Models.Order b in Model)
+                {
+                    <tr>
+                        <td><p>@b.name</p></td>
+                        <td><p>@b.cause</p></td>
+                        <td><p>@b.phone</p></td>
+                        <td><p>@b.description</p></td>
+
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+
+        <section id="services">
+            <div class="container">
+                <div class="title">
+                    <h2>
+                        О нас
+                    </h2>
+                    <p>
+                        Подробная информация
+                    </p>
+                </div>
+                <div class="services clearfix">
+                    <div class="services__item">
+                        <img src="/Content/img/img001.png" height="50%" width="50%" alt="Услуга">
+                        <h3>Описание</h3>
+                        <p>
+                            Всероссийское движение «Волонтеры-медики»  совместно с Ассоциацией волонтерский центров и Общероссийским народным фронтом занимаются  организацией волонтерской деятельности по помощи пожилым людям, которые оказались на карантине или не имеют возможности выйти на улицу.
+                        </p>
+                    </div>
+                    <div class="services__item">
+                        <img src="/Content/img/img002.png" height="50%" width="50%" alt="Услуга">
+                        <h3>Цели проекта</h3>
+                        <p>
+                            Многие жители нашей страны вынуждены находиться в изоляции. Волонтёры могут помочь в покупке продуктов и лекарств, решении бытовых проблем и в организации работы региональных штабов. Вместе мы справимся со всеми трудностями и поддержим каждого
+                        </p>
+                    </div>
+                    <div class="services__item">
+                        <img src="/Content/img/img003.png" height="50%" width="50%" alt="Услуга">
+                        <h3>Результаты проекта</h3>
+                        <p>
+                            Волонтеры будут помогать в покупке продуктов первой необходимости и лекарств, оказывать юридическую и психологическую поддержки, онлайн-помощь. Призываем всех помогать людям, которые вынуждены находиться дома, вместе мы справимся со всеми трудностями.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="portfolio">
+            <div class="container">
+                <div class="title">
+                    <h2>
+                        Наши сотрудники
+                    </h2>
+                    <p>
+                        Волонтеры помогают людям с доставкой продуктов на дом.
+                    </p>
+                </div>
+                <div class="works clearfix">
+                    <img src="/Content/img/img01.jpg" width="290" height="300" alt="Работа">
+                    <img src="/Content/img/img02.jpg" width="290" height="300" alt="Работа">
+                    <img src="/Content/img/img03.jpg" width="290" height="300" alt="Работа">
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+
+            </div>
+        </section>
+        <a name="reviews"></a>
+        <section id="services">
+            <div class="container">
+                <div class="title">
+                    <h2>
+                        Отзывы
+                    </h2>
+                    <p>
+                        Отзывы о работе нашего сервиса.
+                    </p>
+                </div>
+                <div class="services clearfix">
+                    <div class="services__item">
+                        <img src="/Content/img/avatar1.png" height="50%" width="50%" alt="Отзыв">
+                        <h3>E-Commerce</h3>
+                        <p>
+                            Proin iaculis purus consequat sem cure digni ssim. Donec porttitora entum suscipit
+                            aenean rhoncus posuere odio in tincidunt.
+                        </p>
+                    </div>
+                    <div class="services__item">
+                        <img src="/Content/img/avatar2.png" height="50%" width="50%" alt="Отзыв">
+                        <h3>Responsive Web</h3>
+                        <p>
+                            Proin iaculis purus consequat sem cure digni ssim. Donec porttitora entum suscipit
+                            aenean rhoncus posuere odio in tincidunt.
+                        </p>
+                    </div>
+                    <div class="services__item">
+                        <img src="/Content/img/avatar3.png" height="50%" width="50%" alt="Отзыв">
+                        <h3>Web Security</h3>
+                        <p>
+                            Proin iaculis purus consequat sem cure digni ssim. Donec porttitora entum suscipit
+                            aenean rhoncus posuere odio in tincidunt.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="portfolio">
+            <footer>
+                <a name="contacts"></a>
+                <div class="container">
+                    <hr>
+                    <span>Если возникли какие-то вопросы пишите на почту</span>
+                    <a href="#">info@yandex.ru</a>
+                    <div></div>
+                    <p>
+                        Фактический адрес
+                        ул. Воздвиженка, д.10, Москва, 125009, Россия
+                        Телефон
+                        +7 (495) 604-63-63,
+                        +7 (495) 721 92 91 (факс)
+                    </p>
+                    <h4>Мы в соцмедиа</h4>
+                    <img src="/Content/img/smi1.png" href="#" alt="Contacts">
+                    <img src="/Content/img/smi2.png" href="#" alt="Contacts">
+                    <img src="/Content/img/smi3.png" href="#" alt="Contacts">
+                </div>
+            </footer>
+        </section>
+        <div id="id01" class="modal">
+
+            <form class="modal-content animate">
+
+                <div class="container_login">
+                    <label for="uname"><b>Username</b></label>
+                    <input type="text" placeholder="Enter Username" name="uname" required>
+
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" required>
+
+                    <button type="submit">Login</button>
+
+                </div>
+
+                <div class="container_login" style="background-color:#f1f1f1">
+                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                </div>
+            </form>
+        </div>
+        <div id="id02" class="modal">
+
+            <form class="modal-content animate">
+
+                <div class="container_login">
+                    <div align="center">
+                        <h3>Регистрация</h3>
+                        <p>Пожалуйста заполните форму для создания аккаунта.</p>
+                    </div>
+                    <hr>
+                    <label for="name"><b>Имя</b></label>
+                    <input type="text" placeholder="Введите Имя" name="name" required>
+
+                    <label for="sername"><b>Фамилия</b></label>
+                    <input type="text" placeholder="Введите Фамилию" name="sername" required>
+
+                    <label for="telephone"><b>Номер телефона</b></label>
+                    <input type="text" placeholder="Введите номер мобильного телефона" name="telephone" required>
+
+                    <label for="adress"><b>Адрес</b></label>
+                    <input type="text" placeholder="Введите адрес" name="adress" required>
+
+                    <label for="email"><b>Email</b></label>
+                    <input type="text" placeholder="Введите Email" name="email" required>
+
+                    <label for="psw"><b>Пароль</b></label>
+                    <input type="password" placeholder="Введите пароль" name="psw" required>
+
+                    <div class="checkbox">
+                        <input class="custom-checkbox" type="checkbox" id="color-1" name="color-1" value="indigo">
+                        <label for="color-1">Волонтер</label>
+                    </div>
+
+                    <div class="checkbox">
+                        <input class="custom-checkbox" type="checkbox" id="color-2" name="color-2" value="red">
+                        <label for="color-2">Искатель</label>
+                    </div>
+                    <hr>
+
+                    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+                    <button type="submit">Register</button>
+                </div>
+
+                <div class="container_login" style="background-color:#f1f1f1">
+                    <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+
+                </div>
+            </form>
+        </div>
+

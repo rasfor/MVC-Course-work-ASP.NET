@@ -1,0 +1,53 @@
+﻿@model WebApplication1.Models.User
+
+@{
+    ViewBag.Title = "Mypage";
+    Layout = "~/Views/Home/UserSession.cshtml";
+}
+    <div class="container body-content">
+        <h2>Личная страница</h2>
+
+        <div>
+            <h4>User</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.login)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.login)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.password)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.password)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.name)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.email)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.email)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Редактировать", "MyAccount", new { id = Model.Id })|
+            @Html.ActionLink("Мои запросы", "MyList", new { id = Model.Id })  |
+            @Html.ActionLink("Все запросы", "AllOrders", new { id = Model.Id })
+    </div>
+</div>
